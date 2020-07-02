@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         var twrate_local:Float = 4.256F
         var paybaorate_local:Float = 4.275F
         var local_date=DateFormat.format("yyyy-MM-dd", Date())
-        localdate_tv.text=local_date.toString()
         var db_date:String=""
 
         //firebase
