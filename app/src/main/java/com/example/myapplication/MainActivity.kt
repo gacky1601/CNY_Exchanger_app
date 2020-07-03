@@ -25,35 +25,26 @@ class MainActivity : AppCompatActivity() {
         var db = FirebaseFirestore.getInstance()
         var dateRef=db.collection("last_update").document("date")
         dateRef.get()
-            .addOnSuccessListener { document -> db_date=document.getString("date").toString()
+            .addOnSuccessListener { document ->
+                db_date=document.getString("date").toString()
                 serverdate_tv.text=db_date.toString()
                 if(local_date!=db_date){
                     toast("伺服器尚未更新因此使用"+db_date+"之值")
                 }
                 var docRef=db.collection("exchange_rate").document(db_date.toString())
-                var docRef2=db.collection("exchange_rate_paybao").document(db_date.toString())
                 docRef.get()
                     .addOnSuccessListener { document ->
-                        var cny =document.getString("CNY")
-                        twrate_local=document.getString("CNY").toString().toFloat()
+                        twrate_local=document.getString("twbank_cny").toString().toFloat()
                         twexc_tv.text=twrate_local.toString()
-                    }
-                    .addOnFailureListener { exception ->
-                        twexc_tv.text="error"
-                    }
-                docRef2.get()
-                    .addOnSuccessListener { document ->
-                        paybaorate_local=document.getString("CNY").toString().toFloat()
+                        paybaorate_local=document.getString("paybao_cny").toString().toFloat()
                         paybaoexc_tv.text=paybaorate_local.toString()
                     }
                     .addOnFailureListener { exception ->
+                        twexc_tv.text="error"
                         paybaoexc_tv.text="error"
                     }
             }
             .addOnFailureListener { exception -> toast("請連接網路") }
-
-
-
         //轉換
         calculate_button.setOnClickListener {
             try{
