@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.format.DateFormat
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             catch(e: Exception){
                 toast("請輸入有效值")
             }
+            if(twrate_local<paybaorate_local){twresult_tv.setBackgroundColor(Color.parseColor("#66BB6A"))}
+            else{paybaoresult_tv.setBackgroundColor(Color.parseColor("#66BB6A"))}
         }
     }
 }
