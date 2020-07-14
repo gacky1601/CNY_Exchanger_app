@@ -11,11 +11,11 @@
         android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:foregroundGravity="center_vertical|center|center_horizontal"
         android:gravity="center|center_horizontal|center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,66 +145,67 @@
 
     <TableLayout
         android:id="@+id/tableLayout2"
-        android:layout_width="0dp"
+        android:layout_width="360sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constrainedHeight="false"
+        app:layout_constrainedWidth="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnum">
 
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#F048AEFF">
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+                android:layout_width="130sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="10"
                 android:gravity="center"
-                android:text="台灣銀行"
+                android:text="  台灣銀行  "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
                 android:gravity="center"
-                android:text="相差"
+                android:text="     相差    "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
+                android:layout_width="130sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
                 android:gravity="center"
-                android:text="幫幫寶"
+                android:text="        幫幫寶        "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#9F6BB9FA">
 
             <TextView
                 android:id="@+id/twresult_tv"
-                android:layout_width="120dp"
+                android:layout_width="120sp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="10"
                 android:foregroundGravity="center"
                 android:gravity="center"
-                android:text="        "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 tools:layout_editor_absoluteX="34dp"
@@ -212,30 +213,28 @@
 
             <TextView
                 android:id="@+id/diff_tv"
-                android:layout_width="60dp"
+                android:layout_width="100sp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:foregroundGravity="center"
                 android:gravity="center"
-                android:text="    "
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/paybaoresult_tv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
                 android:foregroundGravity="center"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="      "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#FF9A98">
 
             <TextView
@@ -248,17 +247,22 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF9A98">
+
             <TextView
                 android:id="@+id/serverdate_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:foregroundGravity="center"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="        "
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
+                android:textSize="18sp" />
         </TableRow>
 
     </TableLayout>
