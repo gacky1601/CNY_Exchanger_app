@@ -16,8 +16,6 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,19 +34,13 @@ class MainActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 db_date=document.getString("date").toString()
                 var abc= document.getString("timestamp").toString().toLong()
-                val triggerTime: LocalDateTime = LocalDateTime.ofInstant(
-                    Instant.ofEpochMilli(abc),
-                    TimeZone.getDefault().toZoneId()
-                )
+                var triggerTime="123"
                 val dv: Long =
                     java.lang.Long.valueOf(abc.toString()) * 1000 // its need to be in milisecond
 
                 val df = Date(dv)
                 val vv: String = SimpleDateFormat("yyyy-MM-dd ahh:mm").format(df)
                 serverdate_tv.text=vv
-//                if(local_date!=db_date){
-//                    toast("伺服器尚未更新因此使用"+db_date+"之值")
-//                }
                 var getexchangerate=dbpath.document(abc.toString())
                 getexchangerate.get()
                     .addOnSuccessListener { document ->
