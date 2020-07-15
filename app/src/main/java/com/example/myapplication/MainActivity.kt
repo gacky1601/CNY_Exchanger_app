@@ -19,29 +19,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //變數宣告
         var twrate_local:Float = 4.256F
         var paybaorate_local:Float = 4.275F
-        var local_date=DateFormat.format("yyyy-MM-dd", Date())
-        var db_date:String=""
-        var timestamp:String =""
         //firebase
         var db = FirebaseFirestore.getInstance()
         var dbpath=db.collection("exchange_rate")
         var checkdate=dbpath.document("last_update")
         checkdate.get()
             .addOnSuccessListener { document ->
-                db_date=document.getString("date").toString()
-                var abc= document.getString("timestamp").toString().toLong()
-                var triggerTime="123"
-                val dv: Long =
-                    java.lang.Long.valueOf(abc.toString()) * 1000 // its need to be in milisecond
-
-                val df = Date(dv)
-                val vv: String = SimpleDateFormat("yyyy-MM-dd ahh:mm").format(df)
-                serverdate_tv.text=vv
-                var getexchangerate=dbpath.document(abc.toString())
+                var db_timestamp= document.getString("timestamp").toString().toLong()
+                serverdate_tv.text=SimpleDateFormat("yyyy-MM-dd ahh:mm").format(db_timestamp*1000)
+                var getexchangerate=dbpath.document(db_timestamp.toString())
                 getexchangerate.get()
                     .addOnSuccessListener { document ->
                         twrate_local=document.getString("twbank_cny").toString().toFloat()
